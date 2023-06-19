@@ -1,4 +1,4 @@
-<p>Este es el componente SearchIMG</p>
+<p>Componente SearchIMG</p>
 <div #search>
     <form (ngSubmit)="searchImages(searchTerm.value)">
         <input type="text" #searchTerm placeholder="Buscar imágenes en Pixabay">
@@ -8,6 +8,8 @@
 
 <div class="image-grid">
     <div class="image-item" *ngFor="let imageUrl of imageUrls">
-      <img [src]="imageUrl" (Click)="" alt="Imagen de Pixabay">
+      <img [src]="imageUrl" (click)="zoomImage(imageUrl)" [class.zoomed]="zoomedImageUrl === imageUrl" alt="Imagen de Pixabay">
     </div>
 </div>
+
+<img *ngIf="zoomedImageUrl" [src]="zoomedImageUrl" class="zoomed" (click)="zoomedImageUrl = null">

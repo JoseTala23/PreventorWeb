@@ -11,6 +11,7 @@ export class SearchImgComponent {
   apiUrl = 'https://pixabay.com/api/';
   apiKey = '34573560-b4b29946062bf53b893e1ec40';
   imageUrls: string[] = [];
+  zoomedImageUrl: string | null = null;
 
   constructor(private http: HttpClient){
   }
@@ -28,4 +29,9 @@ export class SearchImgComponent {
   showImages(imageUrls: string[]){
     this.imageUrls = imageUrls;
   }
+
+  zoomImage(imageUrl: string){
+    this.zoomedImageUrl = imageUrl;
+  }
+
 }
