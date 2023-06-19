@@ -1,0 +1,13 @@
+<p>Este es el componente SearchIMG</p>
+<div #search>
+    <form (ngSubmit)="searchImages(searchTerm.value)">
+        <input type="text" #searchTerm placeholder="Buscar imágenes en Pixabay">
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+
+<div class="image-grid">
+    <div class="image-item" *ngFor="let imageUrl of imageUrls">
+      <img [src]="imageUrl" (Click)="" alt="Imagen de Pixabay">
+    </div>
+</div>
